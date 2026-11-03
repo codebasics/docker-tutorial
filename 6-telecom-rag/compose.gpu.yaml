@@ -1,0 +1,16 @@
+services:
+  embeddings:
+    build:
+      context: ./embedding-service
+      dockerfile: Dockerfile.gpu
+    image: telecom-embeddings:gpu
+    mem_limit: 6g
+    environment:
+      DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

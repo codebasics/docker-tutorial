@@ -1,0 +1,10 @@
+[project]
+name = "hit-api"
+version = "0.1.0"
+description = "Tiny FastAPI app used throughout the Docker course"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "redis>=5.0",
+]

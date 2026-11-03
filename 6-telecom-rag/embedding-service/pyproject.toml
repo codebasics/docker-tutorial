@@ -1,0 +1,20 @@
+[project]
+name = "embedding-service"
+version = "0.1.0"
+description = "HTTP API that turns text into vectors (all-MiniLM-L6-v2)"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "sentence-transformers>=3.0",
+    "torch>=2.4",
+]
+
+# Use the CPU-only build of PyTorch: ~200 MB instead of ~2.5 GB of CUDA libraries.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

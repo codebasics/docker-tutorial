@@ -1,0 +1,33 @@
+name: telecom-rag
+
+services:
+  embeddings:
+    build:
+      context: ./embedding-service
+    image: telecom-embeddings:cpu
+    mem_limit: 3g
+  
+  chroma:
+    image: chromadb/chroma:latest
+    volumes:
+      - chroma-data:/chroma/chroma
+  
+  rag-app:
+    build: ./rag-app
+    image: telecom-rag-app:v1
+    mem_limit: 2g
+    ports:
+      - "8501:8501"
+    env_file:
+      - path: ./rag-app/.env
+        required: false
+    environment:
+      EMBEDDING_URL: http://embeddings:8001
+      CHROMA_HOST: chroma
+      CHROMA_PORT: "8000"
+    depends_on:
+      - embeddings
+      - chroma
+
+volumes:
+  chroma-data:

@@ -1,0 +1,19 @@
+[project]
+name = "rag-telecom-chatbot"
+version = "0.1.0"
+description = "RAG telecom chatbot - Docker edition (embeddings served by a separate container)"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-chroma",
+    "langchain-groq",
+    "langchain-community",
+    "langchain-text-splitters",
+    "chromadb",
+    "httpx",
+    "pandas",
+    "pypdf",
+    "python-dotenv",
+    "streamlit",
+]
