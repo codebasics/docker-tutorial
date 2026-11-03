@@ -1,7 +1,5 @@
 # Docker Tutorial 🐳
 
-## Docker for Python & AI Apps
-
 A hands-on, step-by-step Docker tutorial that starts with a 10-line FastAPI "hello world" and ends with a full **multi-container RAG chatbot** for a telecom customer-care use case. Each numbered folder introduces one Docker concept and builds on the previous one. Built with **FastAPI**, **Redis**, **Streamlit**, **LangChain + Groq**, **ChromaDB**, and **Sentence Transformers**.
 
 ---
